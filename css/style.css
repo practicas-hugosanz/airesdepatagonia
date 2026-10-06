@@ -268,17 +268,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
 .menu__foot-col a:hover{color:var(--ambar);border-color:var(--ambar);}
 @media(max-width:760px){.menu__foot{grid-template-columns:repeat(2,1fr);gap:14px;}.menu__foot-col p{font-size:.8rem;}}
 
-/* ── Botones: sin animación; son objetos del local ── */
+/* ── Botones: objetos del local (placa de madera y entrada de papel) que reaccionan al pasar ── */
+@property --notch{syntax:"<length>";inherits:false;initial-value:9px;}
 .btn{
   position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  overflow:hidden;isolation:isolate;border-radius:3px;
+  overflow:hidden;isolation:isolate;border-radius:3px;cursor:pointer;
+  transition:translate .45s var(--ease),scale .3s var(--ease),box-shadow .45s var(--ease),filter .3s,--notch .45s var(--ease);
 }
 .btn > span,.btn > svg{position:relative;z-index:2;}
-.btn:active{filter:brightness(.92);}
+.btn__fx{position:absolute;inset:0;z-index:1;pointer-events:none;}
+.btn:active{scale:.965;translate:0 2px;filter:brightness(.92);transition-duration:.12s;}
+.btn:focus-visible{outline:2px solid var(--ambar);outline-offset:4px;}
 
 /* principal: placa de madera con las letras grabadas y dos clavos */
 .btn--solid{
-  padding:15px 42px;rotate:-1deg;
+  padding:15px 42px;rotate:-1deg;transform-origin:50% 0;
   background-color:#8e3b12;background-image:var(--madera-img);background-size:auto,auto,420px 210px,auto;
   color:var(--crema);font-family:var(--f-disp);font-variation-settings:"SOFT" 100,"WONK" 1;
   font-size:1.1rem;font-weight:800;letter-spacing:.01em;
@@ -287,22 +291,72 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
 }
 .btn--solid::before,.btn--solid::after{
   content:"";position:absolute;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;z-index:2;
-  background:#2a1204;box-shadow:inset 0 1px 0 rgba(255,210,160,.45);
+  background:#2a1204;box-shadow:inset 0 1px 0 rgba(255,210,160,.45);transition:background .3s,box-shadow .3s;
 }
 .btn--solid::before{left:13px;}.btn--solid::after{right:13px;}
+/* un foco del techo alumbra la madera: la luz sigue al cursor y la veta se enciende */
+.btn--solid .btn__fx{
+  --lx:50%;--ly:50%;opacity:0;transition:opacity .4s;mix-blend-mode:soft-light;
+  background:radial-gradient(circle 120px at var(--lx) var(--ly),#ffe7bd 0%,rgba(255,178,91,.7) 38%,transparent 72%);
+}
 
 /* secundario: entrada de papel, con muescas como un ticket */
 .btn--ghost,.btn--ig{
+  --notch:9px;
   padding:16px 40px;rotate:1deg;
   background:var(--papel-tex),var(--papel);color:var(--tinta);
   font-family:var(--f-ticket);font-size:.84rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
   box-shadow:inset 0 -3px 0 rgba(122,46,12,.2);
-  -webkit-mask:radial-gradient(circle at 0 50%,#0000 9px,#000 9.6px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,#0000 9px,#000 9.6px) right/51% 100% no-repeat;
-          mask:radial-gradient(circle at 0 50%,#0000 9px,#000 9.6px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,#0000 9px,#000 9.6px) right/51% 100% no-repeat;
+  -webkit-mask:radial-gradient(circle at 0 50%,#0000 var(--notch),#000 calc(var(--notch) + .6px)) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,#0000 var(--notch),#000 calc(var(--notch) + .6px)) right/51% 100% no-repeat;
+          mask:radial-gradient(circle at 0 50%,#0000 var(--notch),#000 calc(var(--notch) + .6px)) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,#0000 var(--notch),#000 calc(var(--notch) + .6px)) right/51% 100% no-repeat;
+  transition:translate .45s var(--ease),scale .3s var(--ease),rotate .5s var(--ease),filter .3s,color .35s .08s,--notch .45s var(--ease);
 }
-.btn--ghost::before,.btn--ig::before{content:"";position:absolute;inset:5px 14px;border:1.5px dashed rgba(138,47,75,.5);pointer-events:none;z-index:1;}
+.btn--ghost::before,.btn--ig::before{content:"";position:absolute;inset:5px 14px;border:1.5px dashed rgba(138,47,75,.5);pointer-events:none;z-index:1;transition:border-color .35s;}
 .btn--ig{padding:16px 44px;}
-.btn--ig svg{width:18px;height:18px;fill:var(--burdeos);}
+.btn--ig svg{width:18px;height:18px;fill:var(--burdeos);transition:fill .35s .08s;}
+/* el ticket se sella: la tinta burdeos avanza con una línea de perforación en el borde */
+.btn--ghost .btn__fx,.btn--ig .btn__fx{
+  background:var(--burdeos);translate:-102% 0;transition:translate .6s var(--ease-2);
+}
+.btn--ghost .btn__fx::after,.btn--ig .btn__fx::after{
+  content:"";position:absolute;top:6px;bottom:6px;right:7px;border-right:2px dotted rgba(244,235,217,.85);
+}
+
+@keyframes placa-columpio{
+  0%{rotate:-1deg;}
+  16%{rotate:3.4deg;}
+  36%{rotate:-2.4deg;}
+  54%{rotate:1.5deg;}
+  72%{rotate:-1.5deg;}
+  88%{rotate:-.7deg;}
+  100%{rotate:-1deg;}
+}
+
+@media (hover:hover){
+  .btn--solid:hover{
+    translate:0 -4px;animation:placa-columpio 1.5s ease-in-out;
+    color:#fff3dc;
+    text-shadow:0 -1px 0 rgba(0,0,0,.7),0 0 14px rgba(255,190,110,.75);
+    box-shadow:0 0 0 1px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,225,185,.6),inset 0 -2px 0 rgba(0,0,0,.3),0 24px 26px -12px rgba(0,0,0,.8),0 0 36px -4px rgba(255,160,70,.5);
+  }
+  .btn--solid:hover .btn__fx{opacity:1;}
+  .btn--solid:hover::before,.btn--solid:hover::after{background:#ffcf8f;box-shadow:0 0 8px 1px rgba(255,190,110,.9);}
+
+  .btn--ghost:hover,.btn--ig:hover{
+    --notch:15px;rotate:0deg;translate:0 -5px;color:var(--crema);
+  }
+  .btn--ghost:hover::before,.btn--ig:hover::before{border-color:rgba(244,235,217,.7);}
+  .btn--ghost:hover .btn__fx,.btn--ig:hover .btn__fx{translate:0 0;}
+  .btn--ig:hover svg{fill:var(--ambar-soft);}
+}
+/* teclado y toque: mismo gesto que el hover */
+.btn--solid:focus-visible{animation:placa-columpio 1.5s ease-in-out;}
+.btn--solid:focus-visible .btn__fx{opacity:1;}
+.btn--ghost:focus-visible .btn__fx,.btn--ig:focus-visible .btn__fx{translate:0 0;}
+.btn--ghost:focus-visible,.btn--ig:focus-visible{color:var(--crema);}
+@media (prefers-reduced-motion:reduce){
+  .btn,.btn *{transition-duration:.01ms !important;animation:none !important;}
+}
 
 /* ═══════════ HERO ═══════════ */
 .hero{
@@ -335,6 +389,48 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
 @media(max-width:900px){.foco--1{display:none;}}
 
 
+
+/* ── la montaña del logo, enorme al fondo del hero: dos cordilleras con la luz de los focos ── */
+.monte{position:absolute;left:0;right:0;bottom:0;height:100%;z-index:0;pointer-events:none;overflow:hidden;}
+.monte::after{ /* el pie se funde con la pared */
+  content:"";position:absolute;left:0;right:0;bottom:0;height:24%;
+  background:linear-gradient(180deg,transparent,rgba(8,28,26,.7) 70%,var(--pared-950));
+}
+.monte::before{ /* velo a la izquierda para que el texto se lea sobre la ladera */
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(13,41,38,.62) 0%,rgba(13,41,38,.3) 30%,transparent 50%);
+}
+.monte__capa{position:absolute;bottom:0;will-change:transform;}
+.monte__capa > span{
+  display:block;width:100%;aspect-ratio:1432/580;
+  -webkit-mask:url("../assets/img/mark.svg") center bottom/contain no-repeat;mask:url("../assets/img/mark.svg") center bottom/contain no-repeat;
+}
+/* lejana: la misma cumbre, en espejo, apagada y detrás */
+.monte__capa--lejos{left:-20vw;width:max(64vw,560px);}
+.monte__capa--lejos > span{
+  transform:scaleX(-1);opacity:.42;
+  background:linear-gradient(180deg,#86c9bb 0%,#31877a 34%,rgba(26,82,75,.5) 72%,transparent 100%);
+}
+/* cercana: la cumbre del logo con nieve iluminada ámbar; un destello recorre la cresta */
+.monte__capa--cerca{left:-8vw;width:max(120vw,1040px);filter:drop-shadow(0 0 46px rgba(255,178,91,.22));}
+.monte__capa--cerca > span{
+  background:
+    linear-gradient(112deg,transparent 38%,rgba(255,236,196,.95) 50%,transparent 62%) 130% 0/260% 100% no-repeat,
+    linear-gradient(180deg,#fff4dc 0%,#ffe0b0 9%,#9fd3c6 24%,#3f9a8c 46%,rgba(26,82,75,.55) 74%,transparent 100%);
+  opacity:.8;animation:monte-destello 9s ease-in-out 2.6s infinite;
+}
+@keyframes monte-destello{
+  0%{background-position:130% 0,0 0;}
+  38%,100%{background-position:-40% 0,0 0;}
+}
+@media(max-width:900px){
+  /* en móvil la foto va debajo del texto: la montaña se queda detrás del texto, no de la foto */
+  .monte{height:60%;bottom:auto;top:0;}
+  .monte::before{background:linear-gradient(180deg,rgba(13,41,38,.15),rgba(13,41,38,.5));}
+  .monte__capa--cerca{left:-40vw;width:max(185vw,740px);}
+  .monte__capa--lejos{left:-34vw;width:max(120vw,520px);}
+}
+@media (prefers-reduced-motion:reduce){.monte__capa--cerca > span{animation:none;}}
 
 .hero__grid{
   position:relative;z-index:3;width:100%;max-width:var(--maxw);margin-inline:auto;

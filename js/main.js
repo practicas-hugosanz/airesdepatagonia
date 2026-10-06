@@ -37,16 +37,23 @@
   }
 
   /* ─────────── 2. Entrada del hero ─────────── */
+  // GSAP deja un transform inline que duplica la inclinación CSS de los botones y pisa sus hover
+  function freeBtns() {
+    $$('.hero__actions .btn').forEach(function (b) { b.style.removeProperty('transform'); });
+  }
+
   function intro() {
     var tl = gsap.timeline();
 
     // la foto del muro verde se revela y entra el texto
-    tl.from('.hero__marco .marco', { clipPath: 'inset(0% 0% 100% 0%)', duration: 1.5, ease: 'expo.out' }, 0)
+    // la montaña asoma desde abajo, primero la lejana y luego la cercana
+    tl.from('.monte__capa', { yPercent: 38, opacity: 0, duration: 2.4, ease: 'expo.out', stagger: .22, clearProps: 'opacity' }, 0)
+      .from('.hero__marco .marco', { clipPath: 'inset(0% 0% 100% 0%)', duration: 1.5, ease: 'expo.out' }, 0)
       .from('.hero__marco img', { scale: 1.35, duration: 2.1, ease: 'expo.out' }, '<')
       .from('.hero__eyebrow', { yPercent: 120, opacity: 0, duration: .9, ease: 'expo.out' }, '-=1.6')
       .from('.hero__title .word', { yPercent: 118, duration: 1.15, ease: 'expo.out', stagger: .07 }, '-=1.1')
       .from('.hero__sub > span', { yPercent: 120, opacity: 0, duration: .9, ease: 'expo.out' }, '-=.7')
-      .from('.hero__actions .btn', { y: 26, opacity: 0, duration: .8, ease: 'power3.out', stagger: .09 }, '-=.6')
+      .from('.hero__actions .btn', { y: 26, opacity: 0, duration: .8, ease: 'power3.out', stagger: .09, clearProps: 'all', onComplete: freeBtns }, '-=.6')
       .from('.cartel__in', { yPercent: -60, opacity: 0, duration: 1.4, ease: 'expo.out' }, '-=1.2')
       .from('.nav__logo, .nav__right > *', { y: -24, opacity: 0, duration: .85, ease: 'expo.out', stagger: .08 }, '-=1.2');
 
@@ -94,7 +101,7 @@
 
       tl.to(bg, { clipPath: 'circle(150% at calc(100% - 90px) 44px)', duration: 1.05, ease: 'expo.inOut' })
         .to(bars[0], { rotate: 45, y: 3.5, width: 20, duration: .45, ease: 'power3.inOut' }, .05)
-        .to(bars[1], { rotate: -45, y: -3.5, width: 20, marginLeft: 0, duration: .45, ease: 'power3.inOut' }, .05)
+        .to(bars[1], { rotate: -45, y: -3.5, width: 20, duration: .45, ease: 'power3.inOut' }, .05)
         .fromTo(focos, { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: .9, ease: 'expo.out', stagger: .12 }, .25)
         .fromTo(foto, { y: 50, rotation: -4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 1.1, ease: 'expo.out' }, .35)
         .fromTo(links, { yPercent: 115 }, { yPercent: 0, duration: 1, ease: 'expo.out', stagger: .075 }, .28)
@@ -237,6 +244,15 @@
       y: 50, ease: 'none',
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .8 }
     });
+    // la montaña: cada plano baja a distinta velocidad
+    gsap.to('.monte__capa--cerca', {
+      y: 90, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .8 }
+    });
+    gsap.to('.monte__capa--lejos', {
+      y: 150, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 }
+    });
   }
 
   /* ─────────── 6. Contadores ─────────── */
@@ -352,6 +368,38 @@
     gsap.from('.origen__side, .origen__line', { y: 22, opacity: 0, duration: 1, ease: 'expo.out', stagger: .12, scrollTrigger: st });
   }
 
+  // las cordilleras se desplazan con el cursor, cada una a su ritmo (profundidad)
+  function monteMouse() {
+    var hero = $('.hero');
+    var cerca = $('.monte__capa--cerca > span');
+    var lejos = $('.monte__capa--lejos > span');
+    if (!hero || !cerca || touch || reduced) return;
+    var cx = gsap.quickTo(cerca, 'x', { duration: 1.4, ease: 'power3' });
+    var lx = gsap.quickTo(lejos, 'x', { duration: 1.8, ease: 'power3' });
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var k = (e.clientX - r.left) / r.width - .5;
+      cx(k * -34);
+      lx(k * 58);
+    });
+  }
+
+  // botones: capa de efecto interna y luz de foco que sigue al cursor sobre la madera
+  function botones() {
+    $$('.btn').forEach(function (b) {
+      var fx = document.createElement('i');
+      fx.className = 'btn__fx';
+      fx.setAttribute('aria-hidden', 'true');
+      b.insertBefore(fx, b.firstChild);
+      if (touch || !b.classList.contains('btn--solid')) return;
+      b.addEventListener('mousemove', function (e) {
+        var r = b.getBoundingClientRect();
+        fx.style.setProperty('--lx', (e.clientX - r.left) + 'px');
+        fx.style.setProperty('--ly', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
   /* ─────────── Arranque ─────────── */
   function boot() {
     if (!hasGSAP) return;
@@ -364,6 +412,7 @@
     nav();
     burgerMenu();
     micro();
+    botones();
     cartel();
     if (!tienda) {
       reveals();
@@ -371,6 +420,7 @@
       cartaHover();
       cartaTabs();
       luz();
+      monteMouse();
       rutaOrigen();
     }
 
