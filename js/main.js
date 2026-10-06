@@ -162,7 +162,7 @@
       var img = box.querySelector('img');
       gsap.timeline({ scrollTrigger: { trigger: box, start: 'top 90%' } })
         .fromTo(box, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.25, ease: 'expo.out' })
-        .fromTo(img, { scale: 1.28 }, { scale: 1.08, duration: 1.5, ease: 'expo.out' }, 0);
+        .fromTo(img, { scale: 1.34 }, { scale: 1.14, duration: 1.5, ease: 'expo.out' }, 0);
     });
 
     // los cuadros se "cuelgan" y la carta de papel se pega
@@ -176,17 +176,13 @@
         scrollTrigger: { trigger: el, start: 'top 85%' }
       });
     });
-    var cumbre = $('[data-cumbre]');
-    if (cumbre) {
-      gsap.from($('.cumbre__v', cumbre), {
-        clipPath: 'inset(100% 0% 0% 0%)', duration: 1.6, ease: 'expo.out',
-        scrollTrigger: { trigger: cumbre, start: 'top 85%' }
+    // las fotos del collage se desplazan suavemente dentro de su marco
+    $$('.cuadro .reveal-img img').forEach(function (img, i) {
+      gsap.fromTo(img, { yPercent: i ? -5 : 4 }, {
+        yPercent: i ? 5 : -4, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.cuadro'), start: 'top bottom', end: 'bottom top', scrub: 1 }
       });
-      gsap.from($('figcaption', cumbre), {
-        opacity: 0, y: 12, rotate: -6, duration: 1, delay: .6, ease: 'back.out(2)',
-        scrollTrigger: { trigger: cumbre, start: 'top 85%' }
-      });
-    }
+    });
     var papel = $('[data-papel]');
     if (papel) {
       gsap.from(papel, {
@@ -218,7 +214,7 @@
     $$('.comandas').forEach(function (row) {
       gsap.from($$('[data-resena]', row), {
         y: -90, rotation: -5, opacity: 0, duration: 1.4, ease: 'elastic.out(1,.55)', stagger: .12,
-        scrollTrigger: { trigger: row, start: 'top 82%' }
+        scrollTrigger: { trigger: row.querySelector('[data-resena]'), start: 'top 88%' }
       });
     });
 
@@ -360,18 +356,23 @@
   function boot() {
     if (!hasGSAP) return;
 
-    if (!reduced) intro();
+    // la tienda (tienda.html) solo usa la barra, el menú y el cartel; el resto es de la página principal
+    var tienda = document.body.classList.contains('page-tienda');
+
+    if (!tienda && !reduced) intro();
 
     nav();
     burgerMenu();
-    reveals();
-    counters();
-    cartaHover();
-    cartaTabs();
     micro();
-    luz();
     cartel();
-    rutaOrigen();
+    if (!tienda) {
+      reveals();
+      counters();
+      cartaHover();
+      cartaTabs();
+      luz();
+      rutaOrigen();
+    }
 
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
   }

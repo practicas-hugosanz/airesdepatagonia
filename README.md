@@ -5,9 +5,10 @@ Sitio estático (HTML + CSS + JS). No necesita build ni dependencias: se sube ta
 ## Estructura
 
 ```
-index.html          una sola página con 5 secciones + navegación
+index.html          página principal con 5 secciones + navegación
+tienda.html         tienda online (pedido para recoger por WhatsApp)
 css/style.css       estilos, paleta y texturas (todo en :root)
-js/main.js          animaciones (GSAP 3.12 + ScrollTrigger + Observer, por CDN)
+js/main.js          animaciones (la tienda solo usa menú, barra y cartel) (GSAP 3.12 + ScrollTrigger + Observer, por CDN)
 assets/img/         logos, fotos del local y fotos de producto (food-*.webp, sin usar de momento)
 ```
 
@@ -91,3 +92,11 @@ Cuando se conozca la URL final hay que añadir (necesitan URL absoluta): `<link 
 `og:image` (usar `assets/img/og-cover.jpg`, 1200×630), `twitter:image`, `url` en el JSON-LD y `sitemap.xml`
 (con la línea `Sitemap:` en `robots.txt`). También conviene dar de alta la web en Google Search Console y mantener
 los datos de las dos fichas de Google Business Profile idénticos a los del pie de página.
+
+## Tienda online (`tienda.html`)
+
+Hecha con los mismos materiales que la web (nichos con LED, madera, papel, etiquetas kraft). Sin servidor ni pasarela de pago:
+
+- Los productos y precios salen de la carta real. Están escritos en el HTML (visibles para buscadores) y con datos estructurados (`ItemList` de `Product` con `Offer`).
+- El carrito vive en el navegador (`localStorage`). Al enviar, se abre **WhatsApp** (`js/tienda.js`, constante `WHATSAPP`) con el pedido redactado: productos, total, local, día, hora y nombre. El pago es en el local al recoger.
+- Para añadir o cambiar un producto: copiar un bloque `<article class="prod">` (o `.fila`) y ajustar `data-id`, `data-name`, los `data-price` de las opciones y el JSON-LD de la cabecera.

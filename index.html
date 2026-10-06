@@ -890,6 +890,14 @@
     },
     {
      "@type": "Question",
+     "name": "¿Se puede pedir online y recoger en el local?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí. En nuestra tienda online eliges los productos, indicas el local, el día y la hora, y envías el pedido por WhatsApp. Lo recoges y pagas en el local."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "¿Se puede pedir para llevar?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -922,11 +930,7 @@
   </a>
 
   <div class="nav__right">
-    <a class="nav__phone" href="tel:+34636060366" aria-label="Llamar al 636 06 03 66">
-      <span class="nav__phone-dot"></span>
-      <svg class="nav__phone-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
-      <span class="nav__phone-num">636 06 03 66</span>
-    </a>
+    <a class="nav__tienda" href="tienda.html" aria-label="Pedir online"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Pedir online</span></a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-overlay">
       <span class="burger__label" data-burger-label>Menú</span>
       <span class="burger__bars"><i></i><i></i></span>
@@ -971,6 +975,13 @@
           <span class="menu__text"><span>Dónde estamos</span></span>
         </a>
         <p class="menu__hint">Direcciones, horario y contacto</p>
+      </li>
+      <li class="menu__item">
+        <a href="tienda.html">
+          <span class="menu__num">05</span>
+          <span class="menu__text"><span>Tienda online</span></span>
+        </a>
+        <p class="menu__hint">Pide y recoge en el local</p>
       </li>
     </ol>
 
@@ -1023,7 +1034,7 @@
 
       <div class="hero__actions">
         <a href="#carta" class="btn btn--solid"><span>Ver la carta</span></a>
-        <a href="#visita" class="btn btn--ghost"><span>Cómo llegar</span></a>
+        <a href="tienda.html" class="btn btn--ghost"><span>Pedir online</span></a>
       </div>
     </div>
 
@@ -1056,17 +1067,9 @@
 <!-- ══════════ SOBRE NOSOTROS ══════════ -->
 <section class="about" id="nosotros">
   <div class="about__in">
-    <div class="about__top">
-      <div class="about__head">
-        <p class="kicker kicker--light" data-reveal-line><span>01 — Nuestra historia</span></p>
-        <h2 class="display display--light" data-split>Pastelería y panadería argentina en Alicante</h2>
-      </div>
-      <figure class="cumbre" data-cumbre>
-        <div class="cumbre__v" role="img" aria-label="Silueta de la montaña del logo de Aires de Patagonia con el muro verde del local en su interior">
-          <img src="assets/img/local-1.webp" alt="" width="1000" height="1333" loading="lazy">
-        </div>
-        <figcaption class="nota nota--luz">el Fitz Roy, en nuestro muro verde</figcaption>
-      </figure>
+    <div class="about__head">
+      <p class="kicker kicker--light" data-reveal-line><span>01 — Nuestra historia</span></p>
+      <h2 class="display display--light" data-split>Pastelería y panadería argentina en Alicante</h2>
     </div>
 
     <div class="about__pared">
@@ -1561,8 +1564,26 @@
       </div>
     </div>
       </div>
-      <p class="nota hoja__pie">Consulta con nuestro equipo cualquier alergia o intolerancia.</p>
+      <p class="nota hoja__pie">Consulta con nuestro equipo cualquier alergia o intolerancia.<br><a class="hoja__tienda" href="tienda.html">¿Quieres encargar? Pide online y recoge en el local →</a></p>
     </div>
+  </div>
+</section>
+
+<!-- ══════════ ENCARGA ONLINE ══════════ -->
+<section class="encarga" aria-labelledby="enc-tit">
+  <div class="encarga__in">
+    <div class="encarga__txt">
+      <p class="kicker kicker--light"><span>Tienda online</span></p>
+      <h2 class="display display--light" id="enc-tit">Encarga online y recoge en el local</h2>
+      <p>Elige tus medialunas, alfajores, empanadas y tartas, envía el pedido por WhatsApp y recógelo en Alicante o en San Vicente del Raspeig.</p>
+      <a class="btn btn--solid" href="tienda.html"><span>Ir a la tienda online</span></a>
+    </div>
+    <ul class="encarga__tags" aria-label="Algunos productos de la tienda">
+      <li><strong>Medialunas</strong><span>docena · 10,20&nbsp;€</span></li>
+      <li><strong>Alfajores de maicena</strong><span>desde 0,75&nbsp;€</span></li>
+      <li><strong>Empanadas</strong><span>2,50&nbsp;€ la unidad</span></li>
+      <li><strong>Tarta entera</strong><span>28,00&nbsp;€ el kilo</span></li>
+    </ul>
   </div>
 </section>
 
@@ -1580,6 +1601,8 @@
       </div>
     </div>
 
+    <p class="nota nota--luz resenas__desliza" aria-hidden="true">desliza para ver más →</p>
+    <div class="comandas-wrap">
     <div class="comandas comandas--1">
       <blockquote class="ticket ticket--feature t-a" data-resena>
         <div class="ticket__cab"><span>Opinión</span><span>Google</span></div>
@@ -1619,6 +1642,7 @@
         <footer class="ticket__pie"><strong>María M.</strong>
           <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
       </blockquote>
+    </div>
     </div>
 
     <div class="resenas__foot">
@@ -1661,6 +1685,7 @@
         <p class="horario__dias">Todos los días</p>
         <a class="horario__tel" href="tel:+34636060366">636 06 03 66</a>
         <ul class="horario__tags"><li>Terraza</li><li>Para llevar</li><li>Accesible</li></ul>
+        <a class="horario__pedir" href="tienda.html">Pedir online para recoger →</a>
       </article>
     </div>
   </div>
@@ -1671,14 +1696,15 @@
   <div class="faq__in">
     <p class="kicker kicker--light" data-reveal-line><span>05 — Preguntas frecuentes</span></p>
     <h2 class="display display--light" id="faq-tit" data-split>Preguntas frecuentes sobre Aires de Patagonia</h2>
-    <dl class="faq__lista">
-      <div class="faq__item"><dt>¿Dónde está Aires de Patagonia?</dt><dd>Tenemos dos locales: uno en el centro de Alicante, en la plaza del Abad Penalva, 1 (03002), y otro en San Vicente del Raspeig, en la calle Villafranqueza, 54 (03690).</dd></div>
-      <div class="faq__item"><dt>¿Cuál es el horario?</dt><dd>Abrimos todos los días, de 10:00 a 23:00.</dd></div>
-      <div class="faq__item"><dt>¿Qué productos argentinos tenéis?</dt><dd>Medialunas y facturas (de crema, membrillo, batata, hojaldre o torta negra), alfajores de maicena, santafesinos y conitos, empanadas, sándwiches de miga, pebetes y tartas como el rogel, el Balcarce, el chajá o el lemon pie. También café, infusiones y cerveza.</dd></div>
-      <div class="faq__item"><dt>¿Qué sabores de empanadas argentinas hay?</dt><dd>Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada y jamón y queso. Cada empanada cuesta 2,50 €.</dd></div>
-      <div class="faq__item"><dt>¿Se puede pedir para llevar?</dt><dd>Sí. Puedes tomar tu pedido en el salón o en la terraza, o llevártelo. El local es accesible.</dd></div>
-      <div class="faq__item"><dt>¿Cuánto cuestan las medialunas, las facturas y las tartas?</dt><dd>Las medialunas y las facturas cuestan 0,95 € la unidad (docena de medialunas, 10,20 €; media docena, 5,70 €). La porción de tarta cuesta 4,50 € y el kilo de tarta, 28,00 €. Consulta la carta completa en esta misma página.</dd></div>
-    </dl>
+    <div class="faq__lista">
+      <details class="faq__item"><summary>¿Dónde está Aires de Patagonia?</summary><p>Tenemos dos locales: uno en el centro de Alicante, en la plaza del Abad Penalva, 1 (03002), y otro en San Vicente del Raspeig, en la calle Villafranqueza, 54 (03690).</p></details>
+      <details class="faq__item"><summary>¿Cuál es el horario?</summary><p>Abrimos todos los días, de 10:00 a 23:00.</p></details>
+      <details class="faq__item"><summary>¿Qué productos argentinos tenéis?</summary><p>Medialunas y facturas (de crema, membrillo, batata, hojaldre o torta negra), alfajores de maicena, santafesinos y conitos, empanadas, sándwiches de miga, pebetes y tartas como el rogel, el Balcarce, el chajá o el lemon pie. También café, infusiones y cerveza.</p></details>
+      <details class="faq__item"><summary>¿Qué sabores de empanadas argentinas hay?</summary><p>Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada y jamón y queso. Cada empanada cuesta 2,50 €.</p></details>
+      <details class="faq__item"><summary>¿Se puede pedir online y recoger en el local?</summary><p>Sí. En nuestra tienda online eliges los productos, indicas el local, el día y la hora, y envías el pedido por WhatsApp. Lo recoges y pagas en el local. <a href="tienda.html">Ir a la tienda online</a>.</p></details>
+      <details class="faq__item"><summary>¿Se puede pedir para llevar?</summary><p>Sí. Puedes tomar tu pedido en el salón o en la terraza, o llevártelo. El local es accesible.</p></details>
+      <details class="faq__item"><summary>¿Cuánto cuestan las medialunas, las facturas y las tartas?</summary><p>Las medialunas y las facturas cuestan 0,95 € la unidad (docena de medialunas, 10,20 €; media docena, 5,70 €). La porción de tarta cuesta 4,50 € y el kilo de tarta, 28,00 €. Consulta la carta completa en esta misma página.</p></details>
+    </div>
   </div>
 </section>
 
@@ -1693,6 +1719,7 @@
       <a href="#carta">Carta</a>
       <a href="#resenas">Opiniones</a>
       <a href="#visita">Dónde estamos</a>
+      <a href="tienda.html">Tienda online</a>
       <a href="#faq">Preguntas frecuentes</a>
     </nav>
   </div>
