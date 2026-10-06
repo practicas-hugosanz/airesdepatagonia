@@ -176,6 +176,17 @@
         scrollTrigger: { trigger: el, start: 'top 85%' }
       });
     });
+    var cumbre = $('[data-cumbre]');
+    if (cumbre) {
+      gsap.from($('.cumbre__v', cumbre), {
+        clipPath: 'inset(100% 0% 0% 0%)', duration: 1.6, ease: 'expo.out',
+        scrollTrigger: { trigger: cumbre, start: 'top 85%' }
+      });
+      gsap.from($('figcaption', cumbre), {
+        opacity: 0, y: 12, rotate: -6, duration: 1, delay: .6, ease: 'back.out(2)',
+        scrollTrigger: { trigger: cumbre, start: 'top 85%' }
+      });
+    }
     var papel = $('[data-papel]');
     if (papel) {
       gsap.from(papel, {
@@ -337,22 +348,12 @@
 
   // la ruta Patagonia → Alicante se dibuja sola
   function rutaOrigen() {
-    var path = $('.origen__path');
-    if (!path) return;
-    var len = path.getTotalLength();
-    gsap.fromTo(path,
-      { strokeDasharray: '1 6', strokeDashoffset: len },
-      {
-        strokeDashoffset: 0, duration: 2.4, ease: 'power2.inOut',
-        scrollTrigger: { trigger: '.origen', start: 'top 90%' }
-      });
-    gsap.from('.origen__side, .origen__line', {
-      y: 22, opacity: 0, duration: 1, ease: 'expo.out', stagger: .12,
-      scrollTrigger: { trigger: '.origen', start: 'top 90%' }
-    });
-    gsap.fromTo('.origen__dot--b', { scale: 0, transformOrigin: '50% 50%' },
-      { scale: 1, duration: .7, ease: 'back.out(3)',
-        scrollTrigger: { trigger: '.origen', start: 'top 80%' } });
+    var sec = $('.origen');
+    if (!sec) return;
+    var st = { trigger: sec, start: 'top 92%' };
+    gsap.from('.origen__monte', { yPercent: 70, opacity: 0, duration: 1.5, ease: 'expo.out', scrollTrigger: st });
+    gsap.from('.origen__linea', { scaleX: 0, duration: 1.6, ease: 'power2.inOut', stagger: .15, scrollTrigger: st });
+    gsap.from('.origen__side, .origen__line', { y: 22, opacity: 0, duration: 1, ease: 'expo.out', stagger: .12, scrollTrigger: st });
   }
 
   /* ─────────── Arranque ─────────── */

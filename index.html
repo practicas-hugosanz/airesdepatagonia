@@ -922,9 +922,10 @@
   </a>
 
   <div class="nav__right">
-    <a class="nav__phone" href="tel:+34636060366">
+    <a class="nav__phone" href="tel:+34636060366" aria-label="Llamar al 636 06 03 66">
       <span class="nav__phone-dot"></span>
-      <span>636 06 03 66</span>
+      <svg class="nav__phone-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="nav__phone-num">636 06 03 66</span>
     </a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-overlay">
       <span class="burger__label" data-burger-label>Menú</span>
@@ -1041,11 +1042,9 @@
       <span class="origen__coord">49°16′S · 72°53′O</span>
       <span class="origen__place">Cerro Fitz Roy · Santa Cruz</span>
     </div>
-    <svg class="origen__route" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
-      <path class="origen__path" d="M4,50 C120,50 150,10 200,10 C250,10 280,50 396,50"/>
-      <circle class="origen__dot origen__dot--a" cx="4" cy="50" r="4"/>
-      <circle class="origen__dot origen__dot--b" cx="396" cy="50" r="4"/>
-    </svg>
+    <span class="origen__linea" aria-hidden="true"></span>
+    <div class="origen__monte" aria-hidden="true"><span></span></div>
+    <span class="origen__linea origen__linea--r" aria-hidden="true"></span>
     <div class="origen__side origen__side--end">
       <span class="origen__coord">38°20′N · 0°28′O</span>
       <span class="origen__place">Alicante · Costa Blanca</span>
@@ -1057,9 +1056,17 @@
 <!-- ══════════ SOBRE NOSOTROS ══════════ -->
 <section class="about" id="nosotros">
   <div class="about__in">
-    <div class="about__head">
-      <p class="kicker kicker--light" data-reveal-line><span>01 — Nuestra historia</span></p>
-      <h2 class="display display--light" data-split>Pastelería y panadería argentina en Alicante</h2>
+    <div class="about__top">
+      <div class="about__head">
+        <p class="kicker kicker--light" data-reveal-line><span>01 — Nuestra historia</span></p>
+        <h2 class="display display--light" data-split>Pastelería y panadería argentina en Alicante</h2>
+      </div>
+      <figure class="cumbre" data-cumbre>
+        <div class="cumbre__v" role="img" aria-label="Silueta de la montaña del logo de Aires de Patagonia con el muro verde del local en su interior">
+          <img src="assets/img/local-1.webp" alt="" width="1000" height="1333" loading="lazy">
+        </div>
+        <figcaption class="nota nota--luz">el Fitz Roy, en nuestro muro verde</figcaption>
+      </figure>
     </div>
 
     <div class="about__pared">
@@ -1069,13 +1076,15 @@
       </figure>
 
       <article class="papel" data-papel>
-        <svg class="sello" viewBox="0 0 120 120" aria-hidden="true">
-          <defs><path id="sello-txt" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
-          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.4"/>
-          <circle cx="60" cy="60" r="31" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          <text font-size="11" font-weight="800" fill="currentColor"><textPath href="#sello-txt" textLength="262" lengthAdjust="spacing">ALICANTE · DESDE 2022 · ARTESANAL ·</textPath></text>
-          <path d="M40 76 L54 52 L61 62 L72 42 L86 76 Z M36 80 Q60 70 88 80" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
+        <div class="sello" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sello-txt" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.4"/>
+            <circle cx="60" cy="60" r="31" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <text font-size="11" font-weight="800" fill="currentColor"><textPath href="#sello-txt" textLength="262" lengthAdjust="spacing">ALICANTE · DESDE 2022 · ARTESANAL ·</textPath></text>
+          </svg>
+          <span class="sello__monte"></span>
+        </div>
         <p class="lead">Somos una pastelería y panadería argentina en Alicante, con un segundo local en San Vicente del Raspeig.</p>
         <p>Elaboramos cada día medialunas, facturas, alfajores, empanadas, sándwiches de miga y tartas siguiendo recetas argentinas. El helado se hace en casa, y el café y las infusiones completan una carta pensada para el desayuno, la merienda o un descanso a cualquier hora.</p>
         <p>Nos llamamos Aires de Patagonia porque de allí venimos: de las panaderías del sur de Argentina donde, a primera hora, ya huele a manteca. Abrimos en 2022 para llevar ese sabor a Alicante.</p>
@@ -1642,7 +1651,7 @@
         </a>
         <div class="flecha flecha--izq flecha--lejos" aria-label="Patagonia, a once mil kilómetros">
           <small>Cerro Fitz Roy</small>
-          <strong class="flecha__h">Patagonia · 11.000 km</strong>
+          <strong class="flecha__h"><i class="monte-ico" aria-hidden="true"></i>Patagonia · 11.000 km</strong>
         </div>
       </div>
 
