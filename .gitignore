@@ -1,0 +1,13 @@
+# material original en bruto (pesado y no lo usa la web:
+# todo lo publicado está ya optimizado dentro de assets/)
+SaveClip.App_*.mp4
+local 1.jpg
+local 2.jpg
+local 3.webp
+logo.jpg
+unnamed*.webp
+
+# entorno local
+.claude/
+.DS_Store
+Thumbs.db

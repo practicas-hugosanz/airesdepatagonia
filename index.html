@@ -1,471 +1,1718 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aires de Patagonia</title>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pastelería Argentina en Alicante | Aires de Patagonia</title>
+<meta name="description" content="Pastelería, panadería y heladería argentina en Alicante y San Vicente del Raspeig. Medialunas, alfajores, empanadas y tartas cada día. Abierto de 10 a 23 h.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0d2926">
+<meta name="geo.region" content="ES-A">
+<meta name="geo.placename" content="Alicante">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preload" as="image" href="assets/img/local-1.webp" type="image/webp" fetchpriority="high">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aires de Patagonia">
+<meta property="og:title" content="Pastelería Argentina en Alicante | Aires de Patagonia">
+<meta property="og:description" content="Medialunas, facturas, alfajores, empanadas y tartas argentinas hechos cada día en Alicante y San Vicente del Raspeig.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Karla:wght@400;500;700;800&family=Caveat:wght@600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "#org",
+   "name": "Aires de Patagonia",
+   "description": "Pastelería, panadería y heladería argentina en Alicante y San Vicente del Raspeig.",
+   "telephone": "+34636060366",
+   "sameAs": [
+    "https://www.instagram.com/airesdepatagoniacafe/",
+    "https://www.facebook.com/airesdepatagoniacafe/"
+   ],
+   "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "reviewCount": "375",
+    "bestRating": "5"
+   }
+  },
+  {
+   "@type": [
+    "Bakery",
+    "CafeOrCoffeeShop"
+   ],
+   "@id": "#alicante",
+   "name": "Aires de Patagonia · Alicante centro",
+   "description": "Pastelería, panadería y heladería argentina: medialunas, facturas, alfajores, empanadas y tartas elaborados cada día.",
+   "parentOrganization": {
+    "@id": "#org"
+   },
+   "telephone": "+34636060366",
+   "priceRange": "€",
+   "servesCuisine": [
+    "Argentina",
+    "Pastelería",
+    "Panadería",
+    "Cafetería"
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pl. del Abad Penalva, 1",
+    "postalCode": "03002",
+    "addressLocality": "Alicante",
+    "addressRegion": "Alicante",
+    "addressCountry": "ES"
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+     ],
+     "opens": "10:00",
+     "closes": "23:00"
+    }
+   ],
+   "amenityFeature": [
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Terraza",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Para llevar",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Accesible",
+     "value": true
+    }
+   ],
+   "hasMenu": {
+    "@id": "#menu"
+   },
+   "sameAs": [
+    "https://www.instagram.com/airesdepatagoniacafe/",
+    "https://www.facebook.com/airesdepatagoniacafe/"
+   ]
+  },
+  {
+   "@type": [
+    "Bakery",
+    "CafeOrCoffeeShop"
+   ],
+   "@id": "#san-vicente",
+   "name": "Aires de Patagonia · San Vicente del Raspeig",
+   "description": "Pastelería, panadería y heladería argentina: medialunas, facturas, alfajores, empanadas y tartas elaborados cada día.",
+   "parentOrganization": {
+    "@id": "#org"
+   },
+   "telephone": "+34636060366",
+   "priceRange": "€",
+   "servesCuisine": [
+    "Argentina",
+    "Pastelería",
+    "Panadería",
+    "Cafetería"
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. Villafranqueza, 54",
+    "postalCode": "03690",
+    "addressLocality": "San Vicente del Raspeig",
+    "addressRegion": "Alicante",
+    "addressCountry": "ES"
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+     ],
+     "opens": "10:00",
+     "closes": "23:00"
+    }
+   ],
+   "amenityFeature": [
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Terraza",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Para llevar",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Accesible",
+     "value": true
+    }
+   ],
+   "hasMenu": {
+    "@id": "#menu"
+   },
+   "sameAs": [
+    "https://www.instagram.com/airesdepatagoniacafe/",
+    "https://www.facebook.com/airesdepatagoniacafe/"
+   ]
+  },
+  {
+   "@type": "Menu",
+   "@id": "#menu",
+   "name": "Carta de Aires de Patagonia",
+   "inLanguage": "es",
+   "hasMenuSection": [
+    {
+     "@type": "MenuSection",
+     "name": "Dulce",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Facturas",
+       "offers": {
+        "@type": "Offer",
+        "price": "0.95",
+        "priceCurrency": "EUR"
+       },
+       "description": "Torta negra, crema, membrillo, combinada, batata, hojaldre"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Medialunas",
+       "offers": {
+        "@type": "Offer",
+        "price": "0.95",
+        "priceCurrency": "EUR"
+       },
+       "description": "Torta negra, crema, membrillo, combinada, batata, hojaldre"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Criollos y cuernitos (3 unidades)",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Alfajor de maicena pequeño",
+       "offers": {
+        "@type": "Offer",
+        "price": "0.75",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Alfajor de maicena grande",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Alfajores santafesinos",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Alfajor de merengue",
+       "offers": {
+        "@type": "Offer",
+        "price": "3.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Alfajor Havanna",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Conitos Aires de Patagonia",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Conitos Havanna",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Napolitana de chocolate",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Croissant curvo",
+       "description": "De mantequilla",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.80",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Croissant recto",
+       "description": "De mantequilla",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.80",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Croissant recto",
+       "description": "De chocolate",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Budín",
+       "description": "Chocolate, limón o frutos secos",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.80",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tartas y pasteles (porción)",
+       "description": "Balcarce, rogel, chajá, selva negra, muerte por chocolate, lemon pie, tarta de queso, tarta de chocolate, red velvet, carrot cake",
+       "offers": {
+        "@type": "Offer",
+        "price": "4.50",
+        "priceCurrency": "EUR"
+       }
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Salado",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de aceite",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de mantequilla",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de tomate",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de queso manchego",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de jamón York",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de salmón",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de serrano",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.75",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de atún",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de queso fresco",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.75",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de atún y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.75",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de serrano y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Media tostada de York y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pebete",
+       "offers": {
+        "@type": "Offer",
+        "price": "4.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Atún y tomate",
+       "offers": {
+        "@type": "Offer",
+        "price": "5.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "York y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "5.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Serrano y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "5.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Sándwich de miga",
+       "description": "Jamón y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Sándwich especiales",
+       "description": "Preguntar ingredientes",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.75",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Empanadas",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       },
+       "description": "Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada, jamón y queso"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pizza (porción)",
+       "offers": {
+        "@type": "Offer",
+        "price": "4.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Croissant de jamón y queso",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.80",
+        "priceCurrency": "EUR"
+       }
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Para beber",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Café",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.40",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Café con leche",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.70",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Café cortado",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.40",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Americano",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.40",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Manchado",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.70",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Capuchino",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Leche sola",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.40",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Extra de leche condensada",
+       "offers": {
+        "@type": "Offer",
+        "price": "0.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tés clásicos",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.30",
+        "priceCurrency": "EUR"
+       },
+       "description": "Tilo, manzanilla, té verde, té classic, té rojo, poleo menta"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tés especiales",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.80",
+        "priceCurrency": "EUR"
+       },
+       "description": "Té verde con cerezas, té verde con limón, té verde con jazmín, rooibos con albahaca, rooibos relax, digestivos (anís, menta, melisa), té rojo Pakistán, frutos del bosque, té moruno hierbabuena, té rojo Cuerpo del Deseo, té negro chai"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Mate cocido",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.60",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Zumo de naranja",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Carajillo",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Carajillo con Baileys",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Coca-Cola",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.80",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Nestea",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Agua",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Agua Vichy Catalán",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Agua con gas Pirineo",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Zumo de piña o melocotón",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.70",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Aquarius",
+       "description": "Limón o naranja",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Choleck",
+       "description": "Chocolate o vainilla",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.70",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Colacao",
+       "offers": {
+        "@type": "Offer",
+        "price": "1.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Caña · Estrella Levante",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Caña · Turia",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.40",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pinta · Estrella Levante",
+       "offers": {
+        "@type": "Offer",
+        "price": "3.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pinta · Turia",
+       "offers": {
+        "@type": "Offer",
+        "price": "3.80",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Botella · Estrella Levante",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Botella · Free Damm Tostada",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Botella · Damm Limón",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Botella · Free Damm 0,0",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.20",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Botella · Carlsberg",
+       "offers": {
+        "@type": "Offer",
+        "price": "3.00",
+        "priceCurrency": "EUR"
+       }
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tinto de verano",
+       "offers": {
+        "@type": "Offer",
+        "price": "2.00",
+        "priceCurrency": "EUR"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Dónde está Aires de Patagonia?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tenemos dos locales: uno en el centro de Alicante, en la plaza del Abad Penalva, 1 (03002), y otro en San Vicente del Raspeig, en la calle Villafranqueza, 54 (03690)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuál es el horario?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Abrimos todos los días, de 10:00 a 23:00."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué productos argentinos tenéis?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Medialunas y facturas (de crema, membrillo, batata, hojaldre o torta negra), alfajores de maicena, santafesinos y conitos, empanadas, sándwiches de miga, pebetes y tartas como el rogel, el Balcarce, el chajá o el lemon pie. También café, infusiones y cerveza."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué sabores de empanadas argentinas hay?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada y jamón y queso. Cada empanada cuesta 2,50 €."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Se puede pedir para llevar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí. Puedes tomar tu pedido en el salón o en la terraza, o llevártelo. El local es accesible."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto cuestan las medialunas, las facturas y las tartas?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Las medialunas y las facturas cuestan 0,95 € la unidad (docena de medialunas, 10,20 €; media docena, 5,70 €). La porción de tarta cuesta 4,50 € y el kilo de tarta, 28,00 €. Consulta la carta completa en esta misma página."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
-<!-- ── NAV ── -->
-<nav id="nav">
-  <a href="#" class="nav-logo"><img src="img/logo.png" alt="Aires de Patagonia"></a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#carta">Carta</a></li>
-    <li><a href="#plantas">El Local</a></li>
-    <li><a href="#locales">Locales</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#hero" aria-label="Aires de Patagonia, pastelería argentina en Alicante — inicio">
+    <img src="assets/img/logo-light.webp" alt="Aires de Patagonia" width="640" height="390">
+  </a>
+
+  <div class="nav__right">
+    <a class="nav__phone" href="tel:+34636060366">
+      <span class="nav__phone-dot"></span>
+      <span>636 06 03 66</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-overlay">
+      <span class="burger__label" data-burger-label>Menú</span>
+      <span class="burger__bars"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════ MENU OVERLAY ══════════ -->
+<nav class="menu" id="menu-overlay" aria-hidden="true">
+  <div class="menu__bg"></div>
+  <div class="riel menu__riel" aria-hidden="true">
+    <span class="foco foco--1"></span><span class="foco foco--2"></span>
+  </div>
+
+  <figure class="menu__foto" aria-hidden="true"><div class="marco madera"><div class="marco__in"><img src="assets/img/local-1.webp" alt="" width="1000" height="1333" loading="lazy"></div></div></figure>
+  <div class="menu__inner">
+    <ol class="menu__list">
+      <li class="menu__item">
+        <a href="#nosotros" data-menu-link>
+          <span class="menu__num">01</span>
+          <span class="menu__text"><span>Sobre nosotros</span></span>
+        </a>
+        <p class="menu__hint">Nuestra historia y el local</p>
+      </li>
+      <li class="menu__item">
+        <a href="#carta" data-menu-link>
+          <span class="menu__num">02</span>
+          <span class="menu__text"><span>La carta</span></span>
+        </a>
+        <p class="menu__hint">Dulce, salado y bebidas, con precios</p>
+      </li>
+      <li class="menu__item">
+        <a href="#resenas" data-menu-link>
+          <span class="menu__num">03</span>
+          <span class="menu__text"><span>Opiniones</span></span>
+        </a>
+        <p class="menu__hint">Opiniones de nuestros clientes</p>
+      </li>
+      <li class="menu__item">
+        <a href="#visita" data-menu-link>
+          <span class="menu__num">04</span>
+          <span class="menu__text"><span>Dónde estamos</span></span>
+        </a>
+        <p class="menu__hint">Direcciones, horario y contacto</p>
+      </li>
+    </ol>
+
+    <div class="menu__foot">
+      <div class="menu__foot-col">
+        <h4>Alicante centro</h4>
+        <p>Pl. del Abad Penalva, 1<br>03002 Alicante</p>
+      </div>
+      <div class="menu__foot-col">
+        <h4>San Vicente del Raspeig</h4>
+        <p>C. Villafranqueza, 54<br>03690 San Vicente</p>
+      </div>
+      <div class="menu__foot-col">
+        <h4>Abierto</h4>
+        <p>Todos los días<br>10:00 – 23:00</p>
+      </div>
+      <div class="menu__foot-col">
+        <h4>Síguenos</h4>
+        <p><a href="https://www.instagram.com/airesdepatagoniacafe/" target="_blank" rel="noopener noreferrer">@airesdepatagoniacafe</a></p>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-sky"></div>
+<main id="contenido">
 
-  <!-- Stars canvas -->
-  <canvas id="star-canvas" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></canvas>
-
-  <!-- Mountains parallax -->
-  <svg class="mtn-layer" id="mtn-far" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="z-index:1;opacity:0.5">
-    <polygon points="0,400 0,280 180,130 320,230 480,80 640,200 800,50 960,170 1120,100 1280,190 1440,120 1440,400" fill="#1a2e14"/>
-    <polygon points="480,80 440,160 520,160" fill="rgba(244,234,208,0.3)"/>
-    <polygon points="800,50 762,130 838,130" fill="rgba(244,234,208,0.35)"/>
-    <polygon points="1120,100 1085,175 1155,175" fill="rgba(244,234,208,0.25)"/>
-  </svg>
-  <svg class="mtn-layer" id="mtn-mid" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="z-index:2;opacity:0.7">
-    <polygon points="0,400 0,320 140,200 300,310 480,160 660,290 840,140 1020,260 1200,180 1380,270 1440,230 1440,400" fill="#122012"/>
-    <polygon points="480,160 445,240 515,240" fill="rgba(244,234,208,0.5)"/>
-    <polygon points="840,140 803,225 877,225" fill="rgba(244,234,208,0.55)"/>
-  </svg>
-  <svg class="mtn-layer" id="mtn-near" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="z-index:3">
-    <polygon points="0,400 0,370 120,280 260,360 420,240 600,350 780,210 960,340 1140,270 1320,360 1440,300 1440,400" fill="#0a1208"/>
-    <rect x="0" y="385" width="1440" height="15" fill="#0a0a06"/>
-  </svg>
-
-  <!-- Hanging plants from top of hero -->
-  <div class="plants-layer" id="hero-plants"></div>
-
-  <!-- 3D Moon -->
-  <div class="moon-wrap" id="moon3d">
-    <div class="moon-halo"></div>
-    <div class="moon-sphere"></div>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero luzable" id="hero">
+  <!-- riel de focos del techo -->
+  <div class="riel" aria-hidden="true">
+    <span class="foco foco--1"></span><span class="foco foco--2"></span><span class="foco foco--3"></span>
+    <div class="cartel"><div class="cartel__in">
+      <div class="cartel__placa madera"><small>Abierto</small><strong>10–23h</strong><small>todos los días</small></div>
+    </div></div>
   </div>
 
-  <!-- Hero text -->
-  <div class="hero-content" id="hero-content">
-    <p class="hero-pre">Patagonia Argentina · Alicante</p>
-    <h1 class="hero-title">
-      Aires de
-      <span>Patagonia</span>
-    </h1>
-    <p class="hero-sub">Gelato · Pastelería · Panadería · Cafetería</p>
-    <div class="hero-ctas">
-      <a href="#carta" class="cta-main">Explorar la Carta</a>
-      <a href="#locales" class="cta-ghost">Nuestros Locales</a>
+  <!-- plantas y faroles: recortes reales de las fotos del local -->
+
+  <div class="hero__grid">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__eyebrow" data-reveal-line><span>Pastelería y panadería argentina en Alicante</span></span>
+        <span class="line"><span class="word">Aires</span> <span class="word">de</span></span>
+        <span class="line"><span class="word word--em">Patagonia</span></span>
+      </h1>
+
+      <p class="hero__sub" data-reveal-line>
+        <span>Medialunas, facturas, alfajores, empanadas y helado artesanal elaborados cada día con receta argentina, en el centro de Alicante y en San Vicente del Raspeig.</span>
+      </p>
+
+      <div class="hero__actions">
+        <a href="#carta" class="btn btn--solid"><span>Ver la carta</span></a>
+        <a href="#visita" class="btn btn--ghost"><span>Cómo llegar</span></a>
+      </div>
+    </div>
+
+    <figure class="hero__marco">
+      <div class="marco madera">
+        <div class="marco__in"><img src="assets/img/local-1.webp" alt="Interior de la pastelería argentina Aires de Patagonia en Alicante: muro verde con el logotipo de la montaña, farol de mimbre y plantas colgantes" width="1000" height="1333" fetchpriority="high"></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ ZÓCALO · ORIGEN ══════════ -->
+<section class="origen madera" aria-label="De dónde venimos">
+  <div class="origen__inner">
+    <div class="origen__side">
+      <span class="origen__coord">49°16′S · 72°53′O</span>
+      <span class="origen__place">Cerro Fitz Roy · Santa Cruz</span>
+    </div>
+    <svg class="origen__route" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
+      <path class="origen__path" d="M4,50 C120,50 150,10 200,10 C250,10 280,50 396,50"/>
+      <circle class="origen__dot origen__dot--a" cx="4" cy="50" r="4"/>
+      <circle class="origen__dot origen__dot--b" cx="396" cy="50" r="4"/>
+    </svg>
+    <div class="origen__side origen__side--end">
+      <span class="origen__coord">38°20′N · 0°28′O</span>
+      <span class="origen__place">Alicante · Costa Blanca</span>
+    </div>
+  </div>
+  <p class="origen__line">Del Fitz Roy a Alicante: sabor argentino a 11.000 km de casa</p>
+</section>
+
+<!-- ══════════ SOBRE NOSOTROS ══════════ -->
+<section class="about" id="nosotros">
+  <div class="about__in">
+    <div class="about__head">
+      <p class="kicker kicker--light" data-reveal-line><span>01 — Nuestra historia</span></p>
+      <h2 class="display display--light" data-split>Pastelería y panadería argentina en Alicante</h2>
+    </div>
+
+    <div class="about__pared">
+      <figure class="cuadro cuadro--a" data-parallax="-30">
+        <div class="marco madera"><div class="reveal-img"><img src="assets/img/local-1.webp" alt="Muro verde con el logotipo de Aires de Patagonia en el salón de la pastelería" width="1000" height="1333" loading="lazy"></div></div>
+        <figcaption class="nota nota--luz">El muro verde con el logo de la montaña</figcaption>
+      </figure>
+
+      <article class="papel" data-papel>
+        <svg class="sello" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="sello-txt" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <circle cx="60" cy="60" r="31" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <text font-size="11" font-weight="800" fill="currentColor"><textPath href="#sello-txt" textLength="262" lengthAdjust="spacing">ALICANTE · DESDE 2022 · ARTESANAL ·</textPath></text>
+          <path d="M40 76 L54 52 L61 62 L72 42 L86 76 Z M36 80 Q60 70 88 80" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <p class="lead">Somos una pastelería y panadería argentina en Alicante, con un segundo local en San Vicente del Raspeig.</p>
+        <p>Elaboramos cada día medialunas, facturas, alfajores, empanadas, sándwiches de miga y tartas siguiendo recetas argentinas. El helado se hace en casa, y el café y las infusiones completan una carta pensada para el desayuno, la merienda o un descanso a cualquier hora.</p>
+        <p>Nos llamamos Aires de Patagonia porque de allí venimos: de las panaderías del sur de Argentina donde, a primera hora, ya huele a manteca. Abrimos en 2022 para llevar ese sabor a Alicante.</p>
+        <p>Puedes tomar algo en el salón o en la terraza, o pedir para llevar. Abrimos todos los días de 10:00 a 23:00 en la plaza del Abad Penalva (Alicante) y en la calle Villafranqueza (San Vicente del Raspeig).</p>
+        <p class="firma">— Aires de Patagonia</p>
+      </article>
+
+      <figure class="cuadro cuadro--b" data-parallax="40">
+        <div class="nicho"><div class="reveal-img"><img src="assets/img/local-2.webp" alt="Rincón del salón de Aires de Patagonia con nichos iluminados, botellas y plantas colgantes" width="900" height="1200" loading="lazy"></div></div>
+        <figcaption class="nota nota--luz">Nichos iluminados del salón</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ── NOSOTROS ── -->
-<section id="nosotros" class="sec-pad">
-  <div class="nosotros-grid" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;padding:7rem 2rem">
-    <!-- 3D tilt card -->
-    <div class="card-3d-wrap sr-left" id="about-card">
-      <div class="card-3d" id="tilt-about">
-        <div class="card-face">
-          <div class="card-face-num">01</div>
-          <img src="img/luna.webp" alt="Luna" style="position:absolute;top:2rem;right:2rem;width:160px;height:160px;object-fit:cover;border-radius:50%;opacity:0.8">
-          <div class="card-face-title">Una luna sobre los Andes</div>
-          <div class="card-face-sub">El corazón de nuestro local: la luna que ilumina cada rincón, recordándonos el cielo infinito de la Patagonia.</div>
-        </div>
-        <div class="card-shadow"></div>
+<!-- ══════════ CARTA ══════════ -->
+<section class="carta" id="carta">
+  <div class="carta__head">
+    <p class="kicker kicker--light" data-reveal-line><span>02 — La carta</span></p>
+    <h2 class="display display--light" data-split>Carta de panadería y pastelería argentina</h2>
+  </div>
+
+  <div class="carta__wrap" id="cartaWrap">
+    <div class="hoja">
+      <header class="hoja__cab">
+        <span class="hoja__mark" aria-hidden="true"></span>
+        <p class="hoja__tit">Aires de Patagonia</p>
+        <p class="hoja__sub">Carta · Alicante y San Vicente del Raspeig</p>
+      </header>
+      <div class="carta__tabs" role="tablist" aria-label="Secciones de la carta">
+        <button class="carta__tab is-on" role="tab" id="tab-dulce" aria-selected="true" aria-controls="panel-dulce" data-tab="dulce">Dulce</button>
+        <button class="carta__tab" role="tab" id="tab-salado" aria-selected="false" aria-controls="panel-salado" data-tab="salado" tabindex="-1">Salado</button>
+        <button class="carta__tab" role="tab" id="tab-beber" aria-selected="false" aria-controls="panel-beber" data-tab="beber" tabindex="-1">Para beber</button>
+      </div>
+      <div class="carta__panel is-on" id="panel-dulce" role="tabpanel" aria-labelledby="tab-dulce">
+    <div class="carta__cols">
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 42C9 24 22 13 35 14c13 1 21 13 21 26-6-4-10-2-12 4-4-6-10-8-14 0-4-6-12-8-22-2Z"/><path d="M23 22l4 12M35 18l2 14M46 24l-2 10"/></svg>
+        <h3 class="carta__cat"><span>Facturas</span><em class="carta__prc">0,95&nbsp;€ ud.</em></h3>
+        <p class="carta__lista">Torta negra, crema, membrillo, combinada, batata, hojaldre</p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 42C9 24 22 13 35 14c13 1 21 13 21 26-6-4-10-2-12 4-4-6-10-8-14 0-4-6-12-8-22-2Z"/><path d="M23 22l4 12M35 18l2 14M46 24l-2 10"/></svg>
+        <h3 class="carta__cat"><span>Medialunas</span><em class="carta__prc">0,95&nbsp;€ ud.</em></h3>
+        <p class="carta__lista">Torta negra, crema, membrillo, combinada, batata, hojaldre</p>
+        <p class="carta__oferta"><strong>Oferta</strong> docena <b>10,20&nbsp;€</b> · media docena <b>5,70&nbsp;€</b></p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 42C9 24 22 13 35 14c13 1 21 13 21 26-6-4-10-2-12 4-4-6-10-8-14 0-4-6-12-8-22-2Z"/><path d="M23 22l4 12M35 18l2 14M46 24l-2 10"/></svg>
+        <h3 class="carta__cat"><span>Criollos y cuernitos</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">3 unidades</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="22" rx="21" ry="8"/><path d="M11 22v20c0 4.4 9.4 8 21 8s21-3.6 21-8V22"/><path d="M11 32q10 6 21 0t21 0"/></svg>
+        <h3 class="carta__cat"><span>Alfajores</span></h3>
+        <p class="carta__sub">Chocolate, pistacho o chocolate blanco</p>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">De maicena · pequeño</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">0,75&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">De maicena · grande</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Santafesinos</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Merengue</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">3,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Havanna</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Conitos Aires de Patagonia</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Conitos Havanna</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+        </ul>
+        <p class="carta__oferta"><strong>Oferta</strong> pequeños de maicena ×3 <b>2,20&nbsp;€</b></p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 48h48V32H8zM8 40h48"/><path d="M8 32q8-8 16 0t16 0 16 0"/><circle cx="32" cy="22" r="4.5"/><path d="M32 17.5q3-7 8-7"/></svg>
+        <h3 class="carta__cat"><span>Variaditos dulces</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Napolitana de chocolate</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Croissant curvo</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,80&nbsp;€</span>
+            <span class="carta__desc">De mantequilla</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Croissant recto</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,80&nbsp;€</span>
+            <span class="carta__desc">De mantequilla</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Croissant recto</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+            <span class="carta__desc">De chocolate</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Budín</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,80&nbsp;€</span>
+            <span class="carta__desc">Chocolate, limón o frutos secos</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 48h48V32H8zM8 40h48"/><path d="M8 32q8-8 16 0t16 0 16 0"/><circle cx="32" cy="22" r="4.5"/><path d="M32 17.5q3-7 8-7"/></svg>
+        <h3 class="carta__cat"><span>Tartas y pasteles</span></h3>
+        <p class="carta__sub"><b>Porción 4,50&nbsp;€</b></p>
+        <p class="carta__lista">Balcarce, rogel, chajá, selva negra, muerte por chocolate, lemon pie, tarta de queso, tarta de chocolate, red velvet, carrot cake</p>
+        <p class="carta__oferta">Por kilo <b>28,00&nbsp;€</b> · mousse <b>30,00&nbsp;€</b></p>
       </div>
     </div>
-
-    <div class="sr-right">
-      <h2 class="nosotros-h2">
-        Los vientos del<br><em>extremo sur</em><br>llegan a Alicante
-      </h2>
-      <p class="nosotros-body">
-        Nacimos del sueño de traer la esencia de la Patagonia argentina a tierras mediterráneas. La misma luna que ilumina los glaciares del sur inspira cada producto que elaboramos: gelatos artesanales, pasteles de mantequilla francesa, panes de masa madre y café de especialidad.
-      </p>
-      <p class="nosotros-body" style="margin-top:1rem">
-        Nuestros locales están diseñados para que, en cuanto entres, sientas ese aire limpio y salvaje del fin del mundo. Las plantas colgantes, la madera cálida y la luna en la pared te transportarán.
-      </p>
-      <div class="values-row">
-        <span class="val-pill">100% Artesanal</span>
-        <span class="val-pill">Masa Madre Propia</span>
-        <span class="val-pill">Sin Aditivos</span>
-        <span class="val-pill">Fruta de Temporada</span>
-        <span class="val-pill">Café de Especialidad</span>
-        <span class="val-pill">Elaboración Diaria</span>
       </div>
+      <div class="carta__panel" id="panel-salado" role="tabpanel" aria-labelledby="tab-salado" hidden>
+    <div class="carta__cols">
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 50V26a14 14 0 0 1 14-14h8a14 14 0 0 1 14 14v24z"/><path d="M24 26h16M24 36h16"/></svg>
+        <h3 class="carta__cat"><span>Tostadas</span></h3>
+        <p class="carta__sub">Precios por media tostada</p>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Aceite</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Mantequilla</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Tomate</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Queso manchego</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Jamón York</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Salmón</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Serrano</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,75&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Atún</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Queso fresco</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,75&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Atún y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,75&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Serrano y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">York y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42a26 26 0 0 1 52 0z"/><path d="M22 30q10-7 20 0"/><path d="M6 46h52"/></svg>
+        <h3 class="carta__cat"><span>Bocadillos</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Pebete</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">4,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Atún y tomate</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">5,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">York y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">5,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Serrano y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">5,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Sándwich de miga</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+            <span class="carta__desc">Jamón y queso</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Sándwich especiales</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,75&nbsp;€</span>
+            <span class="carta__desc">Preguntar ingredientes</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42a26 26 0 0 1 52 0z"/><path d="M22 30q10-7 20 0"/><path d="M6 46h52"/></svg>
+        <h3 class="carta__cat"><span>Empanadas</span><em class="carta__prc">2,50&nbsp;€</em></h3>
+        <p class="carta__lista">Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada, jamón y queso</p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42a26 26 0 0 1 52 0z"/><path d="M22 30q10-7 20 0"/><path d="M6 46h52"/></svg>
+        <h3 class="carta__cat"><span>Otros para picar</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Pizza, porción</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">4,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Croissant de jamón y queso</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,80&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+      </div>
+      <div class="carta__panel" id="panel-beber" role="tabpanel" aria-labelledby="tab-beber" hidden>
+    <div class="carta__cols">
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 28h34v12a13 13 0 0 1-13 13h-8A13 13 0 0 1 12 40z"/><path d="M46 31h3a6.5 6.5 0 0 1 0 13h-4"/><path d="M22 21q-4-6 0-12M32 21q-4-6 0-12"/></svg>
+        <h3 class="carta__cat"><span>Cafetería</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Café</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,40&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Café con leche</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,70&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Café cortado</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,40&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Americano</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,40&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Manchado</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,70&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Capuchino</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Leche sola</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,40&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Extra de condensada</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">0,50&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30h34a0 0 0 0 1 0 0v6a14 14 0 0 1-14 14h-6a14 14 0 0 1-14-14z"/><path d="M44 33h3a5 5 0 0 1 0 10h-5"/><path d="M52 10l-4 14M48 10c5 0 8 4 8 8"/></svg>
+        <h3 class="carta__cat"><span>Tés clásicos</span><em class="carta__prc">1,30&nbsp;€</em></h3>
+        <p class="carta__lista">Tilo, manzanilla, té verde, té classic, té rojo, poleo menta</p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30h34a0 0 0 0 1 0 0v6a14 14 0 0 1-14 14h-6a14 14 0 0 1-14-14z"/><path d="M44 33h3a5 5 0 0 1 0 10h-5"/><path d="M52 10l-4 14M48 10c5 0 8 4 8 8"/></svg>
+        <h3 class="carta__cat"><span>Tés especiales</span><em class="carta__prc">1,80&nbsp;€</em></h3>
+        <p class="carta__lista">Té verde con cerezas, té verde con limón, té verde con jazmín, rooibos con albahaca, rooibos relax, digestivos (anís, menta, melisa), té rojo Pakistán, frutos del bosque, té moruno hierbabuena, té rojo Cuerpo del Deseo, té negro chai</p>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 22h28l-3 28H21z"/><path d="M18 22l-2-6h32l-2 6"/><path d="M30 16l3-10"/></svg>
+        <h3 class="carta__cat"><span>Infusiones y otros</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Mate cocido</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,60&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Zumo de naranja</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Carajillo</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Carajillo con Baileys</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Coca-Cola</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,80&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Nestea</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Agua</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Agua Vichy Catalán</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Agua con gas Pirineo</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Zumo de piña o melocotón</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,70&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Aquarius</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+            <span class="carta__desc">Limón o naranja</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Choleck</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,70&nbsp;€</span>
+            <span class="carta__desc">Chocolate o vainilla</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Colacao</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">1,50&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <svg class="carta__ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20h26v32a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M42 26h7a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5h-7"/><path d="M14 20q2-8 10-8t8 4 10 4"/><path d="M24 30v16M33 30v16"/></svg>
+        <h3 class="carta__cat"><span>Cervezas</span></h3>
+        <ul class="carta__list">
+          <li class="carta__item">
+            <span class="carta__name">Caña · Estrella Levante</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Caña · Turia</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,40&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Pinta · Estrella Levante</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">3,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Pinta · Turia</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">3,80&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Botella · Estrella Levante</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Botella · Free Damm Tostada</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Botella · Damm Limón</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,50&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Botella · Free Damm 0,0</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,20&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Botella · Carlsberg</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">3,00&nbsp;€</span>
+          </li>
+          <li class="carta__item">
+            <span class="carta__name">Tinto de verano</span>
+            <span class="carta__dots"></span>
+            <span class="carta__price">2,00&nbsp;€</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+      </div>
+      <p class="nota hoja__pie">Consulta con nuestro equipo cualquier alergia o intolerancia.</p>
     </div>
   </div>
 </section>
 
-<!-- ── PLANTS SECTION ── -->
-<section id="plantas">
-  <div class="plantas-scene">
-    <div class="ceiling"></div>
-    <div class="ceiling-rail"></div>
-
-    <!-- SVG Hanging plants generated by JS -->
-    <div id="plants-scene-inner" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
-
-    <div class="plantas-text sr">
-      <div class="plantas-big">
-        Un bosque<br><em>en tu taza</em>
-      </div>
-      <p style="margin-top:2rem;font-size:0.8rem;letter-spacing:0.2em;color:rgba(244,234,208,0.5);max-width:40ch;margin-inline:auto;line-height:1.8">
-        Helechos y plantas tropicales cuelgan del techo de nuestros locales, creando una atmósfera única donde la naturaleza patagónica se encuentra con el Mediterráneo.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ── CARTA ── -->
-<section id="carta">
-  <div style="max-width:1400px;margin:0 auto">
-    <div class="carta-heading sr">
+<!-- ══════════ RESEÑAS ══════════ -->
+<section class="resenas" id="resenas">
+  <div class="resenas__in">
+    <div class="resenas__head">
       <div>
-        <h2 class="carta-h2">
-          Nuestra<br><em>Carta</em>
-        </h2>
+        <p class="kicker kicker--light" data-reveal-line><span>03 — Opiniones</span></p>
+        <h2 class="display display--light" data-split>Opiniones de nuestros clientes</h2>
       </div>
-      <p class="carta-desc">
-        Cada producto elaborado cada mañana con ingredientes de primera selección y recetas propias.
-      </p>
+      <div class="resenas__score madera">
+        <div class="resenas__stars" aria-label="4,4 sobre 5">★★★★<span class="half">★</span></div>
+        <p><strong data-count="375" data-suffix="+">0</strong> opiniones en Google y Tripadvisor · valoración media 4,4 sobre 5</p>
+      </div>
     </div>
 
-    <div class="filter-bar sr" id="filter-bar">
-      <button class="filter-btn on" data-f="todo">Todo</button>
-      <button class="filter-btn" data-f="gelato">Gelato & Helado</button>
-      <button class="filter-btn" data-f="pasteleria">Pastelería</button>
-      <button class="filter-btn" data-f="panaderia">Panadería</button>
-      <button class="filter-btn" data-f="cafe">Café & Bebidas</button>
+    <div class="comandas comandas--1">
+      <blockquote class="ticket ticket--feature t-a" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Google</span></div>
+        <p>«Si buscás sentirte un ratito en casa, este lugar es una excelente opción argentina. Sin exagerar, tienen las mejores facturas y bizcochos que podés encontrar; se nota que usan materia prima de primera y que tienen ese “no sé qué” artesanal que marca la diferencia.»</p>
+        <footer class="ticket__pie"><strong>Olga Rímini</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
+      <blockquote class="ticket t-b" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Google</span></div>
+        <p>«Pastelería de 10. Todo está riquísimo, se nota la calidad y el cariño en cada producto. Además la atención es súper amable. ¡Repetiremos seguro!»</p>
+        <footer class="ticket__pie"><strong>Marta Rellihan</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
+      <blockquote class="ticket t-c" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Tripadvisor</span></div>
+        <p>«Los mejores helados que he probado nunca. Terraza en pleno centro de Alicante, junto a la catedral. Difícil de superar.»</p>
+        <footer class="ticket__pie"><strong>Laura S.</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
+    </div>
+    <div class="comandas comandas--2">
+      <blockquote class="ticket t-d" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Google</span></div>
+        <p>«Luis, el camarero, me ha hecho un café excelente y la atención muy bien de él y de sus compañeros. Gracias.»</p>
+        <footer class="ticket__pie"><strong>Merche Rey</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
+      <blockquote class="ticket t-e" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Tripadvisor</span></div>
+        <p>«Todo es exquisito y el trato es excelente. Lo recomiendo al 100%.»</p>
+        <footer class="ticket__pie"><strong>Greta T.</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
+      <blockquote class="ticket t-f" data-resena>
+        <div class="ticket__cab"><span>Opinión</span><span>Tripadvisor · Madrid</span></div>
+        <p>«Pedí unas empanadas y unas medialunas para llevar. Todo fresco y riquísimo, con mucho donde elegir. Sitio muy bien decorado y con buen ambiente.»</p>
+        <footer class="ticket__pie"><strong>María M.</strong>
+          <div class="ticket__total"><span>Valoración</span><span>★★★★★</span></div></footer>
+      </blockquote>
     </div>
 
-    <div class="tilt-grid" id="carta-grid">
-      <!-- Gelato -->
-      <div class="tilt-card sr" data-cat="gelato">
-        <div class="tilt-card-bg">
-          <img src="img/gelato.webp" alt="Gelato Artesanal" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Heladería</div>
-          <div class="tilt-name">Gelato Artesanal</div>
-          <div class="tilt-desc">30+ sabores elaborados diariamente con leche fresca y fruta de temporada. Recetas italo-patagónicas únicas.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tilt-card sr" data-cat="gelato">
-        <div class="tilt-card-bg">
-          <img src="img/sorbete.webp" alt="Sorbetes y Granizados" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Heladería · Sin Lactosa</div>
-          <div class="tilt-name">Sorbetes & Granizados</div>
-          <div class="tilt-desc">Pura fruta convertida en frescor. Sin lactosa, sin azúcares añadidos. La naturaleza en estado puro.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pastelería -->
-      <div class="tilt-card sr" data-cat="pasteleria">
-        <div class="tilt-card-bg">
-          <img src="img/tarta.webp" alt="Tartas y Pasteles" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Pastelería</div>
-          <div class="tilt-name">Tartas & Pasteles</div>
-          <div class="tilt-desc">Creaciones diarias de pastelería artesana. Cheesecakes, tartas de temporada y recetas propias con alma argentina.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tilt-card sr" data-cat="pasteleria">
-        <div class="tilt-card-bg">
-          <img src="img/bolleria.webp" alt="Croissants y Bollería" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Pastelería · Desayunos</div>
-          <div class="tilt-name">Croissants & Bollería</div>
-          <div class="tilt-desc">Mantequilla francesa, masa hojaldrada y fermentación lenta. El desayuno que mereces cada mañana.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panadería -->
-      <div class="tilt-card sr" data-cat="panaderia">
-        <div class="tilt-card-bg">
-          <img src="img/pan.webp" alt="Pan de Masa Madre" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Panadería</div>
-          <div class="tilt-name">Pan de Masa Madre</div>
-          <div class="tilt-desc">Masa madre propia y harinas ecológicas. Horneados cada mañana: panes de campo, centeno y especialidades patagónicas.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tilt-card sr" data-cat="panaderia">
-        <div class="tilt-card-bg">
-          <img src="img/croissant.webp" alt="Medialunas y Facturas" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Panadería · Tradición</div>
-          <div class="tilt-name">Medialunas & Facturas</div>
-          <div class="tilt-desc">La bollería argentina de siempre: hojaldre, dulzana justa y ese aroma que te lleva directo al sur del mundo.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Café -->
-      <div class="tilt-card sr" data-cat="cafe">
-        <div class="tilt-card-bg">
-          <img src="img/cafe.webp" alt="Café de Especialidad" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Cafetería</div>
-          <div class="tilt-name">Café de Especialidad</div>
-          <div class="tilt-desc">Granos de origen único, tostados con precisión. Espresso, filtro, flat white... cada método para cada momento del día.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tilt-card sr" data-cat="cafe">
-        <div class="tilt-card-bg">
-          <img src="img/latte.webp" alt="Bebidas Frías y Especiales" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="tilt-inner">
-          <div class="tilt-text">
-          <div class="tilt-cat">Cafetería · Bebidas</div>
-          <div class="tilt-name">Bebidas Frías & Especiales</div>
-          <div class="tilt-desc">Limonadas artesanales, chocolates fríos, mate cocido y nuestro famoso affogato con gelato de la casa.</div>
-          </div>
-        </div>
-      </div>
+    <div class="resenas__foot">
+      <a class="btn btn--ghost" href="https://www.google.com/maps/search/Aires+de+Patagonia+Alicante" target="_blank" rel="noopener noreferrer"><span>Ver todas las opiniones en Google</span></a>
     </div>
   </div>
 </section>
 
-<!-- ── GALERÍA ── -->
-<section id="galeria">
-  <div class="gal-top">
-    <h2 class="gal-h2 sr-left">El <em>espacio</em></h2>
-    <p class="sr-right" style="font-size:0.75rem;color:rgba(244,234,208,0.35);max-width:28ch;text-align:right">Diseñado para que sientas los aires del sur del mundo sin salir de Alicante.</p>
-  </div>
-  <div class="masonry sr">
-    <div class="mas-item">
-      <img src="img/luna.webp" alt="La Luna Interior" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">La Luna · Interior</span></div>
+<!-- ══════════ VISITANOS ══════════ -->
+<section class="visita" id="visita">
+  <div class="visita__inner">
+    <div class="visita__col">
+      <p class="kicker kicker--light" data-reveal-line><span>04 — Contacto</span></p>
+      <h2 class="display display--light" data-split>Dónde estamos: Alicante y San Vicente del Raspeig</h2>
     </div>
 
-    <div class="mas-item">
-      <img src="img/plantas.webp" alt="Plantas Colgantes" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">Plantas Colgantes</span></div>
-    </div>
-
-    <div class="mas-item">
-      <img src="img/barra.webp" alt="Barra de Gelato" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">Barra de Gelato</span></div>
-    </div>
-
-    <div class="mas-item">
-      <img src="img/fachada.webp" alt="Fachada Alicante" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">Fachada · Alicante</span></div>
-    </div>
-
-    <div class="mas-item">
-      <img src="img/muro.webp" alt="Muro Verde Cafetería" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">Muro Verde · Cafetería</span></div>
-    </div>
-
-    <div class="mas-item">
-      <img src="img/luna-ext.webp" alt="La Luna Detalle" style="width:100%;display:block;">
-      <div class="mas-overlay"><span class="mas-cap">La Luna · Detalle</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── LOCALES ── -->
-<section id="locales">
-  <div class="locales-split">
-    <div class="local-half sr-left">
-      <div class="local-bg-art">
-        <img src="img/sanvi.webp" alt="San Vicent del Raspeig" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="local-content">
-        <p class="local-n">Local 01</p>
-        <h3 class="local-name">San Vicent<br>del Raspeig</h3>
-        <p class="local-addr">San Vicente del Raspeig, Alicante</p>
-        <div class="local-hrs">
-          <div class="local-hrs-row"><span>Lunes – Viernes</span><span>08:00 – 21:00</span></div>
-          <div class="local-hrs-row"><span>Sábados</span><span>09:00 – 21:30</span></div>
-          <div class="local-hrs-row"><span>Domingos</span><span>09:00 – 20:00</span></div>
-        </div>
-        <a href="https://maps.app.goo.gl/nT9iuvDYD8DRK69K9" target="_blank" class="local-map-btn">
-          Ver en Google Maps ↗
+    <div class="visita__cuerpo">
+      <div class="senales">
+        <a class="flecha flecha--der" href="https://www.google.com/maps/search/Aires+de+Patagonia+Plaza+Abad+Penalva+Alicante" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar a Aires de Patagonia, plaza del Abad Penalva, Alicante">
+          <small>Local 1 · Centro</small>
+          <h3>Alicante centro</h3>
+          <p>Pl. del Abad Penalva, 1 · 03002 Alicante</p>
+          <span class="flecha__go">Cómo llegar</span>
         </a>
-      </div>
-    </div>
-    <div class="local-divider"></div>
-    <div class="local-half sr-right">
-      <div class="local-bg-art">
-        <img src="img/alicante.webp" alt="Alicante Centro" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="local-content">
-        <p class="local-n">Local 02</p>
-        <h3 class="local-name">Alicante<br>Centro</h3>
-        <p class="local-addr">Alicante, Comunidad Valenciana</p>
-        <div class="local-hrs">
-          <div class="local-hrs-row"><span>Lunes – Viernes</span><span>08:00 – 21:00</span></div>
-          <div class="local-hrs-row"><span>Sábados</span><span>09:00 – 21:30</span></div>
-          <div class="local-hrs-row"><span>Domingos</span><span>09:00 – 20:00</span></div>
-        </div>
-        <a href="https://maps.app.goo.gl/pUbqUz3LP2HHuJcB7" target="_blank" class="local-map-btn">
-          Ver en Google Maps ↗
+        <a class="flecha flecha--izq" href="https://www.google.com/maps/search/Aires+de+Patagonia+Calle+Villafranqueza+54+San+Vicente+del+Raspeig" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar a Aires de Patagonia, calle Villafranqueza, San Vicente del Raspeig">
+          <small>Local 2</small>
+          <h3>San Vicente del Raspeig</h3>
+          <p>C. Villafranqueza, 54 · 03690 San Vicente</p>
+          <span class="flecha__go">Cómo llegar</span>
         </a>
+        <div class="flecha flecha--izq flecha--lejos" aria-label="Patagonia, a once mil kilómetros">
+          <small>Cerro Fitz Roy</small>
+          <strong class="flecha__h">Patagonia · 11.000 km</strong>
+        </div>
       </div>
+
+      <article class="horario" data-papel>
+        <p class="nota">Horario de apertura</p>
+        <p class="horario__horas">10:00 – 23:00</p>
+        <p class="horario__dias">Todos los días</p>
+        <a class="horario__tel" href="tel:+34636060366">636 06 03 66</a>
+        <ul class="horario__tags"><li>Terraza</li><li>Para llevar</li><li>Accesible</li></ul>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACTO ── -->
-<section id="contacto">
-  <!-- Background hanging plants -->
-  <div id="contacto-plants" style="position:absolute;top:0;left:0;right:0;height:30vh;pointer-events:none;overflow:hidden;opacity:0.4;"></div>
-  <div class="contacto-grid" style="position:relative;z-index:1">
-    <div class="sr-left">
-      <p style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem"><span style="display:block;width:30px;height:1px;background:var(--gold)"></span>Reservas & Contacto</p>
-      <h2 class="contacto-h2">
-        Cuéntanos<br><em>qué necesitas</em>
-      </h2>
-      <p class="contacto-lead">Escríbenos para reservar, hacer pedidos especiales o simplemente decir hola. Respondemos a la brevedad con toda la calidez del sur.</p>
-      <form onsubmit="return submitForm(event)" class="contacto-form">
-        <div class="form-row-2">
-          <div class="form-field"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
-          <div class="form-field"><label>Email</label><input type="email" placeholder="tu@email.com" required></div>
-        </div>
-        <div class="form-row-2">
-          <div class="form-field"><label>Teléfono</label><input type="tel" placeholder="+34 000 000 000"></div>
-          <div class="form-field">
-            <label>Local</label>
-            <select>
-              <option value="">Seleccionar...</option>
-              <option>San Vicent del Raspeig</option>
-              <option>Alicante</option>
-              <option>Ambos locales</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-field">
-          <label>¿En qué podemos ayudarte?</label>
-          <select>
-            <option value="">Seleccionar motivo...</option>
-            <option>Reserva de mesa</option>
-            <option>Tarta o pedido por encargo</option>
-            <option>Evento privado</option>
-            <option>Consulta sobre carta</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="form-field"><label>Mensaje</label><textarea placeholder="Cuéntanos..." required></textarea></div>
-        <button type="submit" class="form-submit">Enviar mensaje →</button>
-        <div id="form-ok" style="display:none;margin-top:1rem;padding:1rem;border:1px solid rgba(212,168,67,0.3);font-size:0.8rem;color:var(--gold)">
-          ¡Mensaje recibido! Nos ponemos en contacto pronto.
-        </div>
-      </form>
-    </div>
-    <div class="contacto-info-block sr-right">
-      <div class="info-item">
-        <span class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <div>
-          <p class="info-label">San Vicent del Raspeig</p>
-          <p class="info-val">San Vicente del Raspeig, Alicante<br><a href="https://maps.app.goo.gl/igXRQt4MazwGnEpQ6" target="_blank">Abrir en Google Maps ↗</a></p>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <div>
-          <p class="info-label">Alicante Centro</p>
-          <p class="info-val">Alicante, Comunidad Valenciana<br><a href="https://maps.app.goo.gl/pUbqUz3LP2HHuJcB7" target="_blank">Abrir en Google Maps ↗</a></p>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-        <div>
-          <p class="info-label">Horario General</p>
-          <p class="info-val">Lun – Vie: 08:00 – 21:00<br>Sáb: 09:00 – 21:30<br>Dom: 09:00 – 20:00</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
-        <div>
-          <p class="info-label">Síguenos</p>
-          <p class="info-val">
-            <a href="#">Instagram</a> &nbsp;·&nbsp;
-            <a href="#">Facebook</a> &nbsp;·&nbsp;
-            <a href="#">TikTok</a>
-          </p>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-        <div>
-          <p class="info-label">Email</p>
-          <p class="info-val"><a href="mailto:hola@airesdepatagonia.es">hola@airesdepatagonia.es</a></p>
-        </div>
-      </div>
-    </div>
+<!-- ══════════ PREGUNTAS FRECUENTES ══════════ -->
+<section class="faq" id="faq" aria-labelledby="faq-tit">
+  <div class="faq__in">
+    <p class="kicker kicker--light" data-reveal-line><span>05 — Preguntas frecuentes</span></p>
+    <h2 class="display display--light" id="faq-tit" data-split>Preguntas frecuentes sobre Aires de Patagonia</h2>
+    <dl class="faq__lista">
+      <div class="faq__item"><dt>¿Dónde está Aires de Patagonia?</dt><dd>Tenemos dos locales: uno en el centro de Alicante, en la plaza del Abad Penalva, 1 (03002), y otro en San Vicente del Raspeig, en la calle Villafranqueza, 54 (03690).</dd></div>
+      <div class="faq__item"><dt>¿Cuál es el horario?</dt><dd>Abrimos todos los días, de 10:00 a 23:00.</dd></div>
+      <div class="faq__item"><dt>¿Qué productos argentinos tenéis?</dt><dd>Medialunas y facturas (de crema, membrillo, batata, hojaldre o torta negra), alfajores de maicena, santafesinos y conitos, empanadas, sándwiches de miga, pebetes y tartas como el rogel, el Balcarce, el chajá o el lemon pie. También café, infusiones y cerveza.</dd></div>
+      <div class="faq__item"><dt>¿Qué sabores de empanadas argentinas hay?</dt><dd>Ternera, ternera picante, pollo, pollo picante, caprese, espinacas, cebolla caramelizada y jamón y queso. Cada empanada cuesta 2,50 €.</dd></div>
+      <div class="faq__item"><dt>¿Se puede pedir para llevar?</dt><dd>Sí. Puedes tomar tu pedido en el salón o en la terraza, o llevártelo. El local es accesible.</dd></div>
+      <div class="faq__item"><dt>¿Cuánto cuestan las medialunas, las facturas y las tartas?</dt><dd>Las medialunas y las facturas cuestan 0,95 € la unidad (docena de medialunas, 10,20 €; media docena, 5,70 €). La porción de tarta cuesta 4,50 € y el kilo de tarta, 28,00 €. Consulta la carta completa en esta misma página.</dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="img/logo.png" alt="Aires de Patagonia">
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <img class="footer__logo" src="assets/img/logo-light.webp" alt="Aires de Patagonia, pastelería argentina en Alicante" width="640" height="390" loading="lazy">
+    <nav class="footer__nav" aria-label="Pie de página">
+      <a href="#nosotros">Nuestra historia</a>
+      <a href="#carta">Carta</a>
+      <a href="#resenas">Opiniones</a>
+      <a href="#visita">Dónde estamos</a>
+      <a href="#faq">Preguntas frecuentes</a>
+    </nav>
+  </div>
+  <div class="footer__nap">
+    <address class="footer__loc">
+      <strong>Aires de Patagonia · Alicante centro</strong>
+      <span>Pl. del Abad Penalva, 1<br>03002 Alicante</span>
+    </address>
+    <address class="footer__loc">
+      <strong>Aires de Patagonia · San Vicente del Raspeig</strong>
+      <span>C. Villafranqueza, 54<br>03690 San Vicente del Raspeig</span>
+    </address>
+    <div class="footer__loc">
+      <strong>Horario y contacto</strong>
+      <span>Todos los días, de 10:00 a 23:00<br><a href="tel:+34636060366">636 06 03 66</a></span>
     </div>
-    <ul class="footer-nav">
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#carta">Carta</a></li>
-      <li><a href="#plantas">El Local</a></li>
-      <li><a href="#locales">Locales</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <div class="footer-social">
-      <a href="#" class="social-btn" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-      <a href="#" class="social-btn" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-      <a href="#" class="social-btn" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+    <div class="footer__loc">
+      <strong>Síguenos</strong>
+      <span><a href="https://www.instagram.com/airesdepatagoniacafe/" target="_blank" rel="noopener noreferrer">Instagram</a><br><a href="https://www.facebook.com/airesdepatagoniacafe/" target="_blank" rel="noopener noreferrer">Facebook</a></span>
     </div>
   </div>
-  <p class="footer-copy">© 2025 Aires de Patagonia · Todos los derechos reservados · <a href="#" style="color:inherit">Privacidad</a></p>
+  <div class="footer__bottom">
+    <span>© <span id="year">2026</span> Aires de Patagonia · Pastelería, panadería y heladería argentina</span>
+    <span>Alicante · San Vicente del Raspeig</span>
+  </div>
 </footer>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href="#nosotros">Nosotros</a>
-  <a href="#carta">Carta</a>
-  <a href="#plantas">El Local</a>
-  <a href="#locales">Locales</a>
-  <a href="#contacto">Contacto</a>
-</div>
-
-<script src="script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="js/main.js"></script>
 </body>
 </html>
